@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="class.css">
+    <script>
+         function colorHandeler(color){
+            const bulb = document.getElementById("bulb");
+            bulb.style.backgroundColor= color;
+         }
+         function onOfHandeler(value){
+            const onOfButton =document.getElementById("on-off");
+            value==="ON"?onOfButton.value="OFF":onOfButton.value="ON";
+         }
+    </script>
+</head>
+<body>
+    <div id="bulb"></div>
+    <input type="button" value="Red" onclick="colorHandeler(value)">
+    <input type="button" value="Black" onclick="colorHandeler(value)">
+    <input type="button" value="Blue" onclick="colorHandeler(value)">
+    <input type="button" value="Green" onclick="colorHandeler(value)">
+    
+</body>
+</html>
