@@ -8,12 +8,23 @@
     try{
         if(res){
             let newResponse = await res.json();
-            console.log(newResponse);
+            return newResponse;
         }
     }catch(error){
-        console.log("Some error occured");
+        return "unable to fetch";
     }
-
-
  }
- myFunction();
+ 
+ const divElement = document.getElementById("Product");
+ const btn = document.getElementById("btn");
+ btn.addEventListener("click",async(e)=>{
+    e.preventDefault();  
+    const data = await myFunction();
+    
+    data.map((d)=>{
+        const insideDiv = document.createElement("div");
+        insideDiv.innerHTML= d.title;
+        divElement.appendChild(insideDiv);
+        console.log(insideDiv); 
+ })
+});
